@@ -17,7 +17,7 @@ public class ApplicationMenu {
     }
     public void getUserInput(int choice){
         switch (choice){
-            case 1: CommandFactory.defineCommand("CREATE").execute();break;//command. execute вернет определенную фабрику
+            case 1: CommandFactory.defineCommand("CREATE").execute();break;
             case 2: CommandFactory.defineCommand("PRINT_ALL").execute();break;
             case 3:
                 System.out.println("bye bye");

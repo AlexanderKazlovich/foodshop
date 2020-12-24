@@ -8,7 +8,7 @@ public enum CommandType {
     PRINT_ALL(new PrintCommand()),
     CREATE (new CreateCommand());
 
-    CommandType(Command command) {
+    CommandType(Command command){
         this.command = command;
     }
 
