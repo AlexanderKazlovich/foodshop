@@ -1,11 +1,11 @@
 package com.kazlovich.context;
 
-import com.kazlovich.command.CreateCommand;
-import com.kazlovich.command.PrintCommand;
+import com.kazlovich.factory.CommandFactory;
+
 import java.util.Scanner;
 
 public class ApplicationMenu {
-    private static ApplicationMenu applicationMenu = new ApplicationMenu();
+    private static final ApplicationMenu applicationMenu = new ApplicationMenu();
     private ApplicationMenu() { }
 
     public void printAvailableOptions(){
@@ -17,8 +17,8 @@ public class ApplicationMenu {
     }
     public void getUserInput(int choice){
         switch (choice){
-            case 1: new CreateCommand().execute(); break;
-            case 2: new PrintCommand().execute(); break;
+            case 1: CommandFactory.defineCommand("CREATE").execute();break;//command. execute вернет определенную фабрику
+            case 2: CommandFactory.defineCommand("PRINT_ALL").execute();break;
             case 3:
                 System.out.println("bye bye");
                 System.exit(1);
